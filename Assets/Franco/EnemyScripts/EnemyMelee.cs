@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemyMelee : Enemy
 {
     [SerializeField] private float forceAtack = 50f;
-    [SerializeField] private Animator animator;
+    //[SerializeField] private Animator animator;
     private Vector3 direction;
     [SerializeField]  private float retroceso=5f;
 
