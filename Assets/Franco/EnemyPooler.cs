@@ -51,7 +51,7 @@ public class EnemyPooler : MonoBehaviour
             poolDictionary.Add(pool.tag, objectPool);
         }
     }
-
+    /*
     public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
     {
         if(!poolDictionary.ContainsKey(tag))
@@ -68,7 +68,33 @@ public class EnemyPooler : MonoBehaviour
 
         return objectToSpawn;
     }
+    */
 
+    public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
+    {
+        if (!poolDictionary.ContainsKey(tag))
+        {
+            Debug.LogWarning("Pool with tag " + tag + " doesn't exist.");
+            return null;
+        }
+
+        if (poolDictionary[tag].Count == 0)
+        {
+            Debug.LogWarning("No objects available in pool: " + tag);
+            return null;
+        }
+
+        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+
+        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.rotation = rotation;
+        objectToSpawn.SetActive(true);
+
+        // Lo volvemos a encolar inmediatamente (circular)
+        poolDictionary[tag].Enqueue(objectToSpawn);
+
+        return objectToSpawn;
+    }
     public void ReturnToPool(GameObject objectToReturn)
     {
         objectToReturn.SetActive(false);
