@@ -34,10 +34,25 @@ public class EnemyScavenger : Enemy
     public override void StateAtacar()
     {
         Debug.Log("Enemy Scavenger ataca");
-        // Aqu� puedes implementar la l�gica de ataque del Scavenger
-        // Por ejemplo, infligir da�o al jugador o realizar una animaci�n de ataque
-        // Despu�s de atacar, vuelve a estado de seguimiento
-        ChangeState(States.follow);
+        // Ataque cuerpo a cuerpo: deslizamiento corto hacia el jugador
+        if (PuedeAtacar())
+        {
+            Vector3 direccionAtaque = (target.position - transform.position).normalized;
+            float distanciaDeslizamiento = 2f; // distancia corta del golpe
+            float fuerzaDeslizamiento = 15f;   // fuerza del impulso
+
+            // Solo desliza si la distancia al jugador es mayor que la distancia mínima de golpe
+            if (Vector3.Distance(transform.position, target.position) > distanciaDeslizamiento)
+            {
+                rb.AddForce(direccionAtaque * fuerzaDeslizamiento, ForceMode.Impulse);
+            }
+            else
+            {
+                // Si ya está cerca, solo aplica un pequeño impulso
+                rb.AddForce(direccionAtaque * (fuerzaDeslizamiento * 0.5f), ForceMode.Impulse);
+            }
+            ReiniciarCooldown();
+        }
     }
 
     public override void StateDead()

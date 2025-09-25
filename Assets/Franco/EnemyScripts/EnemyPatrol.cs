@@ -62,7 +62,7 @@ public class EnemyPatrol : Enemy
             EnemyScavenger scavenger = s.GetComponent<EnemyScavenger>();
             if (scavenger != null)
             {
-                //scavenger.SetTarget(target);
+               scavenger.StateAtacar();
             }
             else
             {
