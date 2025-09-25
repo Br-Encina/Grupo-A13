@@ -446,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 648576128}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.3, z: 0.1}
+  m_LocalPosition: {x: 0, y: -0.81, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1207,7 +1207,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1221,7 +1221,7 @@ Transform:
   m_GameObject: {fileID: 1944531078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.84, z: 0}
+  m_LocalPosition: {x: 0, y: 4.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1362,9 +1362,17 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1188651478}
+    - target: {fileID: 4743287867611553046, guid: a6cc36b47f52cfc4bac8ca82944d69cc, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 5844454039615118375, guid: a6cc36b47f52cfc4bac8ca82944d69cc, type: 3}
       propertyPath: m_Name
       value: Scavenger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844454039615118375, guid: a6cc36b47f52cfc4bac8ca82944d69cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8009249886691898644, guid: a6cc36b47f52cfc4bac8ca82944d69cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1427,6 +1435,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1188651478}
+    - target: {fileID: 4365450742648577983, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: distanciaSeguir
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
