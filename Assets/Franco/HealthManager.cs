@@ -4,6 +4,8 @@ public class HealthManager : MonoBehaviour, IHealth
 {
     [SerializeField]int health = 100;
 
+    //Necesario para hacer una llama al controlador del enemigo
+    EnemyController enemyController;
     public int Health { get {return health; } set { health = value;}}
     public void TakeDamage(int damage)
     {
@@ -14,6 +16,10 @@ public class HealthManager : MonoBehaviour, IHealth
         {
             Death();
         }
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        enemyController = GetComponent<EnemyController>();
+
+        enemyController.StarAttacking(player);
     }
 
     public void Death()
@@ -23,14 +29,6 @@ public class HealthManager : MonoBehaviour, IHealth
     }
 
     /*
-     private void OnCollisionEnter(Collision other)
-    {
-        if(other.transform.CompareTag("Enemies"))
-        {
-          healthManager = other.transform.GetComponent<HealthManager>();//make damage
-          if(healthManager != null) healthManager.TakeDamage(_bulletDamage);
-        }
-        Destroy(gameObject);
-    }
+    
     */
 }
