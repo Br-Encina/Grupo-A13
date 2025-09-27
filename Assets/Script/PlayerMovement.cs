@@ -11,6 +11,8 @@ public class PersonajeScript : MonoBehaviour
     public Camera _cam;
     Vector3 forward, right;
 
+    bool useGun = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,6 +39,20 @@ public class PersonajeScript : MonoBehaviour
         // Animaciones (magnitud del movimiento)
         _animator.SetFloat("VelX", horizontal);
         _animator.SetFloat("VelY", vertical);
+
+        _animator.SetBool("HoldGun", useGun);
+
+
+
+
+        //Esto controla la animacion de disparo!!!!
+        if (Input.GetMouseButtonDown(0))
+        {
+            useGun = true;
+            _animator.SetLayerWeight(1, 1);
+            _animator.SetTrigger("Shoot"); // lanza la animación de disparo
+        }
+
     }
 
     void FixedUpdate()
@@ -52,6 +68,9 @@ public class PersonajeScript : MonoBehaviour
             rb.rotation = Quaternion.Slerp(rb.rotation, targetRotation, _rotationSpeed * Time.fixedDeltaTime);
         }
     }
+
+   
+
 }
 
 
