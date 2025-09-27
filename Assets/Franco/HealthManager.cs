@@ -16,6 +16,7 @@ public class HealthManager : MonoBehaviour, IHealth
         {
             Death();
         }
+        // hay que adaptar para que en lugar de usar EnemyControler use el script del enemigo que toque
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         enemyController = GetComponent<EnemyController>();
 

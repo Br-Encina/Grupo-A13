@@ -22,12 +22,13 @@ public class Enemy : MonoBehaviour
     protected float distancia;
     protected bool live = true;
 
-
+    protected HealthManager healthManager;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(CalcularDistancia());
+        healthManager =target.GetComponent<HealthManager>();
     }
 
 
