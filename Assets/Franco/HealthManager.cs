@@ -39,7 +39,7 @@ public class HealthManager : MonoBehaviour, IHealth
         }
         else
         {
-            Destroy(gameObject, 1);
+            //Destroy(gameObject, 1);
             Debug.Log(transform.name + " is dead");
           
             //enemyController.enabled = false;
