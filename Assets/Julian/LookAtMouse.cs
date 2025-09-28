@@ -18,7 +18,7 @@ public class LookAtMouse : MonoBehaviour
             transform.LookAt(target);
 
             // Debug log just the XZ coordinates
-            Debug.Log("Mouse on floor at: X=" + hit.point.x + " Z=" + hit.point.z);
+            //Debug.Log("Mouse on floor at: X=" + hit.point.x + " Z=" + hit.point.z);
         }
     }
     

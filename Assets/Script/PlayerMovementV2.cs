@@ -9,6 +9,8 @@ public class PlayerMovementV2 : MonoBehaviour
     Vector3 _moveDirection; Vector3 _moveSideways;
     float _rotationAcount; Quaternion _turnOffset;
     Animator _animator;
+
+    private bool useGun = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -32,6 +34,14 @@ public class PlayerMovementV2 : MonoBehaviour
         rb.MovePosition(_movement);
         _animator.SetFloat("VelX", _moveH);
         _animator.SetFloat("VelY", _moveV);
+        //Esto controla la animacion de disparo!!!!
+        if (Input.GetMouseButtonDown(0))
+        {
+            useGun = true;
+            Debug.Log("Disparando");
+            _animator.SetLayerWeight(1, 1);
+            _animator.SetTrigger("Shoot"); // lanza la animación de disparo
+        }
     }
 }
  
