@@ -5,7 +5,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] Transform shootSpawn;      // Punto de salida del disparo (la boca del arma)
     [SerializeField] GameObject bulletPrefab;   // Prefab de la bala
     [SerializeField] float bulletSpeed = 20f;
-    [SerializeField] GameObject player;
+    
 
 
 

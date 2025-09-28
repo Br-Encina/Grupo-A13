@@ -151,3 +151,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPower: 20
   lifeTime: 1
+  damage: 10

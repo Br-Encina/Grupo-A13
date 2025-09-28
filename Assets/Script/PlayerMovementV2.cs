@@ -8,7 +8,7 @@ public class PlayerMovementV2 : MonoBehaviour
     float _moveH, _moveV; Vector3 _movement;
     Vector3 _moveDirection; Vector3 _moveSideways;
     float _rotationAcount; Quaternion _turnOffset;
-    Animator _animator;
+    private Animator _animator;
 
     private bool useGun = false;
     void Start()
@@ -38,7 +38,6 @@ public class PlayerMovementV2 : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             useGun = true;
-            Debug.Log("Disparando");
             _animator.SetLayerWeight(1, 1);
             _animator.SetTrigger("Shoot"); // lanza la animación de disparo
         }

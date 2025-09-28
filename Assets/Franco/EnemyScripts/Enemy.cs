@@ -21,14 +21,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected Transform target;
     protected float distancia;
     protected bool live = true;
-
+    
     protected HealthManager healthManager;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(CalcularDistancia());
-        healthManager =target.GetComponent<HealthManager>();
+        healthManager =target.GetComponentInParent<HealthManager>();
     }
 
 
@@ -126,7 +126,7 @@ public class Enemy : MonoBehaviour
     }
     public virtual void StateDead()
     {
-
+        live = false;
     }
     public bool PuedeAtacar()
     {
