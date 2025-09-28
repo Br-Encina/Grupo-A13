@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5247280493059461815}
   m_Layer: 0
   m_Name: Canon
-  m_TagString: Untagged
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,38 @@ MonoBehaviour:
   laserDuration: 0.2
   postAttackDelay: 0.5
   laserColor: {r: 0, g: 1, b: 1, a: 1}
-  startLaserPoint: {fileID: 6710760272397310348}
+  startLaserPoint: {fileID: 7670462721899686420}
+--- !u!1 &7670462721899686420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2879133299678033781}
+  m_Layer: 0
+  m_Name: LaserSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2879133299678033781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7670462721899686420}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6710760272397337990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6710760272397213484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,16 +159,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 400042, guid: ba434859afb1c4229aaede0cc81877b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2879133299678033781}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100184, guid: ba434859afb1c4229aaede0cc81877b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1125950298359625270}
   m_SourcePrefab: {fileID: 100100000, guid: ba434859afb1c4229aaede0cc81877b5, type: 3}
---- !u!1 &6710760272397310348 stripped
+--- !u!1 &6710760272397310068 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: ba434859afb1c4229aaede0cc81877b5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 100184, guid: ba434859afb1c4229aaede0cc81877b5, type: 3}
   m_PrefabInstance: {fileID: 6710760272397213484}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1125950298359625270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6710760272397310068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c2c83d8407e2742899caf7d036ab30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6710760272397337622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400186, guid: ba434859afb1c4229aaede0cc81877b5, type: 3}
+  m_PrefabInstance: {fileID: 6710760272397213484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6710760272397337990 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400042, guid: ba434859afb1c4229aaede0cc81877b5, type: 3}
   m_PrefabInstance: {fileID: 6710760272397213484}
   m_PrefabAsset: {fileID: 0}

@@ -65,7 +65,7 @@ public class EnemyRange : Enemy
 
             if (hit.collider.CompareTag("Player"))
             {
-                // Aplica daño aquí
+                healthManager.TakeDamage(10);
             }
         }
         else
