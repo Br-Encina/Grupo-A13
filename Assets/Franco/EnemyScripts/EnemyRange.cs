@@ -1,84 +1,104 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyRange : Enemy
 {
     private Vector3 direction;
     private LineRenderer lineRenderer;
+    private bool isAttacking = false;
 
-    [SerializeField] private float rayDistance = 20f; // alcance máximo
-    [SerializeField] private float laserDuration = 0.2f; // tiempo visible
-    [SerializeField] private Color laserColor = Color.red;
+    [SerializeField] private float rayDistance = 20f;
+    [SerializeField] private float laserDuration = 0.2f;
+    [SerializeField] private float postAttackDelay = 0.5f;
+    [SerializeField] private Color laserColor = Color.cyan;
     [SerializeField] private GameObject startLaserPoint;
-    private Vector3 endPoint = new Vector3(0f, 2f, 0f);
+
 
     private void Start()
     {
         // Configurar LineRenderer
-        
         lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.startWidth = 0.05f;
-        lineRenderer.endWidth = 0.05f;
+        lineRenderer.startWidth = 0.5f;
+        lineRenderer.endWidth = 0.5f;
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         lineRenderer.startColor = laserColor;
         lineRenderer.endColor = laserColor;
         lineRenderer.enabled = false;
     }
 
+
     public override void StateAtacar()
     {
-        if (!live) return;
+        if (!live || isAttacking) return;
         if (PuedeAtacar())
         {
-            Vector3 origin;
-            if (startLaserPoint != null)
-            {
-                origin = startLaserPoint.transform.position;
-            }
-            else
-            {
-                origin = transform.position;
-            }
 
-            direction = (target.transform.position - origin).normalized;
+            StartCoroutine(RangedAttackSequence());
 
-            RaycastHit hit;
-
-            if (Physics.Raycast(origin, direction, out hit, rayDistance))
-            {
-                // El rayo se corta en la pared/objeto
-                DrawLaser(origin, hit.point);
-                Debug.Log("Rayo impactó en: " + hit.collider.name);
-
-                // Si golpea al jugador
-                if (hit.collider.CompareTag("Player"))
-                {
-                   
-                }
-            }
-            else
-            {
-                // dibuja hasta el alcance máximo
-                DrawLaser(origin, origin + direction * rayDistance);
-            }
-
-            ReiniciarCooldown();
         }
     }
+
+
+    private IEnumerator RangedAttackSequence()
+    {
+        isAttacking = true;
+
+        Vector3 origin;
+        if (startLaserPoint != null)
+        {
+            origin = startLaserPoint.transform.position;
+        }
+        else
+        {
+            origin = transform.position;
+        }
+        Vector3 playerPivot = target.position + new Vector3(0, 1, 0);
+        direction = (playerPivot - origin).normalized;
+        RaycastHit hit;
+        Vector3 endPosition;
+
+
+        if (Physics.Raycast(origin, direction, out hit, rayDistance))
+        {
+            endPosition = hit.point;
+            Debug.Log("Rayo impactó en: " + hit.collider.name);
+
+            if (hit.collider.CompareTag("Player"))
+            {
+                // Aplica daño aquí
+            }
+        }
+        else
+        {
+            endPosition = origin + direction * rayDistance;
+        }
+
+
+        DrawLaser(origin, endPosition);
+
+
+        yield return new WaitForSeconds(laserDuration);
+
+
+        lineRenderer.enabled = false;
+
+
+        yield return new WaitForSeconds(postAttackDelay);
+
+
+        ReiniciarCooldown();
+
+        isAttacking = false;
+    }
+
 
     private void DrawLaser(Vector3 start, Vector3 end)
     {
         lineRenderer.SetPosition(0, start);
-        lineRenderer.SetPosition(1, end+endPoint);
-        
+        lineRenderer.SetPosition(1, end);
         lineRenderer.enabled = true;
 
-        // Ocultar después de un tiempo
-        Invoke(nameof(DisableLaser), laserDuration);
     }
 
-    private void DisableLaser()
-    {
-        lineRenderer.enabled = false;
-    }
+
 }
-
