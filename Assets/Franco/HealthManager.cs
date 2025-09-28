@@ -30,15 +30,16 @@ public class HealthManager : MonoBehaviour, IHealth
     public void Death()
     {
         // Animate deadth
-        Destroy(gameObject,1);
+        
         if(gameObject.tag=="Player")
         {
+
             Debug.Log("Game Over");
-            Time.timeScale = 0;
+            
         }
         else
         {
-           
+            Destroy(gameObject, 1);
             Debug.Log(transform.name + " is dead");
           
             //enemyController.enabled = false;

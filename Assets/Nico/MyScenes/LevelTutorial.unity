@@ -558,6 +558,75 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &192277674
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -120.094666
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.003155182
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -108.230255
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707974139386998137, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_Name
+      value: MECHA PINKY FREE OBJ (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
 --- !u!43 &192450759
 Mesh:
   m_ObjectHideFlags: 0
@@ -1411,15 +1480,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4365450742648577983, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
       propertyPath: target
@@ -1427,7 +1496,7 @@ PrefabInstance:
       objectReference: {fileID: 1717398351}
     - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.63
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1435,7 +1504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.11
+      value: -107.3
       objectReference: {fileID: 0}
     - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1471,7 +1540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6707974139386998137, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2722,6 +2791,144 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &626680225
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -37.117645
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.003155182
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.315773
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707974139386998137, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_Name
+      value: MECHA PINKY FREE OBJ (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+--- !u!1001 &645185657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.620125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.003155182
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -107.68883
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707974139386998137, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_Name
+      value: MECHA PINKY FREE OBJ (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
 --- !u!43 &655677095
 Mesh:
   m_ObjectHideFlags: 0
@@ -2887,6 +3094,75 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &680521237
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.904716
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.003155182
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -57.57984
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707974139386998137, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_Name
+      value: MECHA PINKY FREE OBJ (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
 --- !u!43 &824270790
 Mesh:
   m_ObjectHideFlags: 0
@@ -4893,6 +5169,75 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1351332266}
   m_SourcePrefab: {fileID: 100100000, guid: 345eebae71af4774a8664dec9ae3d6fe, type: 3}
+--- !u!1001 &1447456866
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -115.36988
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.003155182
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -29.064941
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707974139386998137, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_Name
+      value: MECHA PINKY FREE OBJ (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
 --- !u!43 &1452743448
 Mesh:
   m_ObjectHideFlags: 0
@@ -5676,7 +6021,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 234554528309172230, guid: 1c5668a30730b1b41abca888304fb127, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.9865879
+      value: -96.7
       objectReference: {fileID: 0}
     - target: {fileID: 234554528309172230, guid: 1c5668a30730b1b41abca888304fb127, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5684,7 +6029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 234554528309172230, guid: 1c5668a30730b1b41abca888304fb127, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.621727
+      value: -130.2
       objectReference: {fileID: 0}
     - target: {fileID: 234554528309172230, guid: 1c5668a30730b1b41abca888304fb127, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5804,6 +6149,144 @@ MonoBehaviour:
   shootSpawn: {fileID: 1113993017}
   bulletPrefab: {fileID: 6081496129700291141, guid: db33cba11cc2fd44d92dabd1f697a087, type: 3}
   bulletSpeed: 20
+--- !u!1001 &1920124604
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -74.74245
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.003155182
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -108.42393
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707974139386998137, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_Name
+      value: MECHA PINKY FREE OBJ (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+--- !u!1001 &1966002299
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614618659094561593, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -79.5549
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.003155182
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -154.50148
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222939344070211523, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707974139386998137, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
+      propertyPath: m_Name
+      value: MECHA PINKY FREE OBJ (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5fc53a0e00f1b545bef3923deafa092, type: 3}
 --- !u!43 &2140450950
 Mesh:
   m_ObjectHideFlags: 0
@@ -6961,3 +7444,10 @@ SceneRoots:
   - {fileID: 1851381657}
   - {fileID: 385938343}
   - {fileID: 1126931794}
+  - {fileID: 645185657}
+  - {fileID: 626680225}
+  - {fileID: 1920124604}
+  - {fileID: 1447456866}
+  - {fileID: 1966002299}
+  - {fileID: 680521237}
+  - {fileID: 192277674}
