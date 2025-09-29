@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour, IHealth
 {
@@ -6,7 +7,6 @@ public class HealthManager : MonoBehaviour, IHealth
 
     //Necesario para hacer una llama al controlador del enemigo
     //EnemyController enemyController;
-    Enemy enemy;
     public int Health { get {return health; } set { health = value;}}
     
     public void TakeDamage(int damage)
@@ -34,12 +34,13 @@ public class HealthManager : MonoBehaviour, IHealth
         if(gameObject.tag=="Player")
         {
 
+            SceneManager.LoadScene("looseScene");
             Debug.Log("Game Over");
             
         }
         else
         {
-            //Destroy(gameObject, 1);
+            Destroy(gameObject, 1);
             Debug.Log(transform.name + " is dead");
           
             //enemyController.enabled = false;

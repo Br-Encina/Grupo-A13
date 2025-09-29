@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Nico/MyScenes/LevelOne.unity
     guid: 2ff00ff71958a9b45bf09552a2b80452
+  - enabled: 1
+    path: Assets/Julian/MenuScene/winScene.unity
+    guid: 7cb64bff761915742a5a6537f13781fc
+  - enabled: 1
+    path: Assets/Julian/MenuScene/looseScene.unity
+    guid: e0976760a9eea6a4c9e16352cac380f0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
