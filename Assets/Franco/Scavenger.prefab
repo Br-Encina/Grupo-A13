@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8009249886691898644}
   - component: {fileID: 4743287867611553046}
-  - component: {fileID: 1243954948455739250}
+  - component: {fileID: -1638647200426878960}
   m_Layer: 0
   m_Name: Scavenger
   m_TagString: Untagged
@@ -61,7 +61,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1243954948455739250
+--- !u!114 &-1638647200426878960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,15 +73,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df97da74a7228b748b2118e82c82b451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  states: 0
-  distanciaSeguir: 20
-  distanciaAtacar: 10
-  distanciaVolver: 23
-  tiempoUltimoAtaque: 1
-  cooldownAtaque: 120
-  stunDuration: 2
-  target: {fileID: 0}
   speed: 5
+  detectionRange: 10
+  explosionRange: 3
+  explosionDamage: 50
+  fuseTime: 2
+  blinkSpeed: 0.1
+  blinkColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &4974137424957579235
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,77 +1,85 @@
+using System.Collections;
 using UnityEngine;
 
-public class EnemyScavenger : Enemy
+public class EnemyScavenger : MonoBehaviour
 {
+    [Header("Movimiento")]
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float detectionRange = 10f;
+    [SerializeField] private float explosionRange = 2f;
+
+    [Header("Daño")]
+    [SerializeField] private int explosionDamage = 40;
+    [SerializeField] private float explosionDelay = 0.5f;
+
+    [Header("Referencias")]
+    private Transform target;
+    private Rigidbody rb;
+    private bool isExploding = false;
+    private HealthManager healthManager;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        target = GameObject.FindGameObjectWithTag("Player")?.transform;
+        healthManager = GetComponent<HealthManager>();
     }
-    public override void StateIdle()
-    {
-        // El Scavenger no patrulla, permanece inactivo en estado Idle
-        rb.linearVelocity = Vector3.zero;
-        // Si el jugador est� en rango, cambia a estado de seguimiento
-        if (distancia < distanciaSeguir)
-        {
-            ChangeState(States.follow);
-        }
-    }
-    public override void StateFollow()
-    {
-        // Persigue al jugador
-        ChasePlayer();
-        if (distancia < distanciaAtacar)
-        {
-            ChangeState(States.atack);
-        }
-        else if (distancia > distanciaVolver)
-        {
-            // Si el jugador se aleja, vuelve a estado Idle
-            ChangeState(States.idle);
-        }
-    }
-    public override void StateAtacar()
-    {
-        Debug.Log("Enemy Scavenger ataca");
-        // Ataque cuerpo a cuerpo: deslizamiento corto hacia el jugador
-        if (PuedeAtacar())
-        {
-            Vector3 direccionAtaque = (target.position - transform.position).normalized;
-            float distanciaDeslizamiento = 2f; // distancia corta del golpe
-            float fuerzaDeslizamiento = 15f;   // fuerza del impulso
 
-            // Solo desliza si la distancia al jugador es mayor que la distancia mínima de golpe
-            if (Vector3.Distance(transform.position, target.position) > distanciaDeslizamiento)
+    private void FixedUpdate()
+    {
+        if (target == null || isExploding) return;
+
+        float distancia = Vector3.Distance(transform.position, target.position);
+
+        if (distancia <= detectionRange)
+        {
+            // Seguir al jugador
+            Vector3 direction = (target.position - transform.position).normalized;
+            rb.linearVelocity = direction * speed;
+
+            // Si está lo suficientemente cerca, inicia la explosión
+            if (distancia <= explosionRange)
             {
-                rb.AddForce(direccionAtaque * fuerzaDeslizamiento, ForceMode.Impulse);
+                StartCoroutine(Explode());
             }
-            else
-            {
-                // Si ya está cerca, solo aplica un pequeño impulso
-                rb.AddForce(direccionAtaque * (fuerzaDeslizamiento * 0.5f), ForceMode.Impulse);
-            }
-            ReiniciarCooldown();
+        }
+        else
+        {
+            rb.linearVelocity = Vector3.zero;
         }
     }
 
-    public override void StateDead()
+    private IEnumerator Explode()
     {
-        if (!live) return;
-        live = false;
+        isExploding = true;
         rb.linearVelocity = Vector3.zero;
-        // Aqu puedes implementar la l�gica de muerte del Scavenger
-        // Por ejemplo, reproducir una animaci�n de muerte o desactivar el enemigo
-        gameObject.SetActive(false);
-        // Despu�s de morir, podr�as reutilizar el objeto para un pool de enemigos
-    }
-    private void ChasePlayer()
-    {
-        if (!live) return;
-        Vector3 direction = (target.position - transform.position).normalized;
-        rb.linearVelocity = direction * speed;
+
+       
+        yield return new WaitForSeconds(explosionDelay);
+
+       
+        Collider[] hits = Physics.OverlapSphere(transform.position, explosionRange);
+        foreach (var hit in hits)
+        {
+            if (hit.TryGetComponent<IHealth>(out var health))
+            {
+                health.TakeDamage(explosionDamage);
+            }
+        }
+
+        // Efecto visual o de sonido (si tenés uno)
+        Debug.Log($"{name} explota causando {explosionDamage} de daño.");
+
+       
+        healthManager.Death();
+        Destroy(gameObject);
     }
 
-    
-    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRange);
+    }
 }

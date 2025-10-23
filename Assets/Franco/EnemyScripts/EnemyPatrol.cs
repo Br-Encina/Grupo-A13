@@ -18,6 +18,7 @@ public class EnemyPatrol : Enemy
     {
         rb = GetComponent<Rigidbody>();
         enemyPooler = EnemyPooler.Instance;
+       
     }
 
     public override void StateIdle()
@@ -62,13 +63,13 @@ public class EnemyPatrol : Enemy
             EnemyScavenger scavenger = s.GetComponent<EnemyScavenger>();
             if (scavenger != null)
             {
-               scavenger.StateAtacar();
+               
             }
             else
             {
                 Debug.LogWarning("The spawned object does not have an EnemyScavenger component.");
             }
-
+           
 
         }
         else
