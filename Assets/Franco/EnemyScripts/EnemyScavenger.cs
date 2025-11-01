@@ -1,85 +1,114 @@
-using System.Collections;
 using UnityEngine;
 
-public class EnemyScavenger : MonoBehaviour
+public class EnemyScavenger : MonoBehaviour, IPooledObject
 {
-    [Header("Movimiento")]
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float detectionRange = 10f;
-    [SerializeField] private float explosionRange = 2f;
+    [SerializeField] private float speed = 4f;
+    [SerializeField] private float explosionRadius = 2f;
+    [SerializeField] private int explosionDamage = 30;
+    [SerializeField] private float lifetime = 5f;
 
-    [Header("Daño")]
-    [SerializeField] private int explosionDamage = 40;
-    [SerializeField] private float explosionDelay = 0.5f;
-
-    [Header("Referencias")]
-    private Transform target;
+    private Transform player;
     private Rigidbody rb;
-    private bool isExploding = false;
-    private HealthManager healthManager;
+    private float timer;
 
-    private void Start()
+    // 1. Variable de seguro para evitar doble explosión
+    private bool isExploding = false;
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindGameObjectWithTag("Player")?.transform;
-        healthManager = GetComponent<HealthManager>();
     }
 
+    public void OnObjectSpawn()
+    {
+        // 2. Resetear el seguro y el timer
+        isExploding = false;
+        timer = lifetime;
+
+        // Buscar player (Optimización: Si tienes un GameManager, pide la referencia desde ahí)
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+
+        rb.linearVelocity = Vector3.zero; // Usar .velocity es más estándar que .linearVelocity
+        rb.angularVelocity = Vector3.zero;
+    }
+
+    // 3. Mover la lógica de físicas a FixedUpdate
     private void FixedUpdate()
     {
-        if (target == null || isExploding) return;
-
-        float distancia = Vector3.Distance(transform.position, target.position);
-
-        if (distancia <= detectionRange)
+        if (player == null || isExploding)
         {
-            // Seguir al jugador
-            Vector3 direction = (target.position - transform.position).normalized;
-            rb.linearVelocity = direction * speed;
-
-            // Si está lo suficientemente cerca, inicia la explosión
-            if (distancia <= explosionRange)
-            {
-                StartCoroutine(Explode());
-            }
+            rb.linearVelocity = Vector3.zero; // Detenerse si no hay jugador o si está explotando
+            return;
         }
-        else
+
+        // Mover hacia el player
+        Vector3 dir = (player.position - transform.position).normalized;
+        rb.linearVelocity = dir * speed;
+    }
+
+    // 4. Update solo se encarga del timer
+    private void Update()
+    {
+        if (isExploding) return; // Si ya estamos explotando, no descontar timer
+
+        timer -= Time.deltaTime;
+        if (timer <= 0)
         {
-            rb.linearVelocity = Vector3.zero;
+            Explode();
         }
     }
 
-    private IEnumerator Explode()
+    // 5. Filtrar la colisión
+    private void OnCollisionEnter(Collision collision)
     {
-        isExploding = true;
-        rb.linearVelocity = Vector3.zero;
-
-       
-        yield return new WaitForSeconds(explosionDelay);
-
-       
-        Collider[] hits = Physics.OverlapSphere(transform.position, explosionRange);
-        foreach (var hit in hits)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (hit.TryGetComponent<IHealth>(out var health))
+            Explode();
+        }
+    }
+
+    private void Explode()
+    {
+        // 6. Activar el seguro
+        if (isExploding) return;
+        isExploding = true;
+        Debug.Log("Scavenger exploding!");
+
+        Collider[] hits = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (var col in hits)
+        {
+            // Buscar el transform raíz (puede que el collider sea de un hijo del jugador)
+            Transform root = col.transform.root;
+
+            // Comprobar si la raíz tiene la etiqueta Player
+            if (!root.CompareTag("Player"))
+            {
+                // Alternativamente, si el collider tiene un Rigidbody y su gameObject está etiquetado:
+                if (col.attachedRigidbody == null || !col.attachedRigidbody.gameObject.CompareTag("Player"))
+                    continue;
+            }
+
+            // Intentar obtener HealthManager primero en la raíz, si no, en los padres del collider
+            var health = root.GetComponent<HealthManager>() ?? col.GetComponentInParent<HealthManager>();
+
+            if (health != null)
             {
                 health.TakeDamage(explosionDamage);
             }
+            else
+            {
+                Debug.LogWarning($"Explode: se detectó un objeto con tag Player ({root.name}) pero no tiene HealthManager attached.", root);
+            }
         }
 
-        // Efecto visual o de sonido (si tenés uno)
-        Debug.Log($"{name} explota causando {explosionDamage} de daño.");
-
-       
-        healthManager.Death();
-        Destroy(gameObject);
+        // Volver al pool
+        EnemyPooler.Instance.ReturnToPool("Scavenger", this.gameObject);
     }
 
-    private void OnDrawGizmosSelected()
+    public void OnObjectDespawn()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRange);
+        // Resetear velocidad por si acaso
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }

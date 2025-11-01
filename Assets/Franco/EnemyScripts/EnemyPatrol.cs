@@ -16,7 +16,7 @@ public class EnemyPatrol : Enemy
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+       
         enemyPooler = EnemyPooler.Instance;
        
     }
@@ -51,38 +51,36 @@ public class EnemyPatrol : Enemy
 
     public override void StateAtacar()
     {
-        Debug.Log("Enemy Patrol ataca ");
+       
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
 
-        //Instantiate(Scavenger, transform.position + Vector3.up, Quaternion.identity);
-        if (enemyPooler != null)
-        {
-           GameObject s = enemyPooler.SpawnFromPool("Scavenger", _scavengerSpawnPoint.position, _scavengerSpawnPoint.rotation);
-
-            EnemyScavenger scavenger = s.GetComponent<EnemyScavenger>();
-            if (scavenger != null)
-            {
-               
-            }
-            else
-            {
-                Debug.LogWarning("The spawned object does not have an EnemyScavenger component.");
-            }
-           
-
-        }
-        else
-        {
-            Debug.LogWarning("EnemyPooler instance is null.");
-
-        }
-
-        
-        // Si se aleja del rango de ataque volver a seguir
         if (distancia > distanciaAtacar + 0.5f)
         {
             ChangeState(States.follow);
+            return; 
+        }
+
+        if (enemyPooler != null && PuedeAtacar())
+        {
+            if (_scavengerSpawnPoint == null)
+            {
+                Debug.LogError($"{name}: _scavengerSpawnPoint no está asignado.");
+                return;
+            }
+
+            
+            GameObject s = EnemyPooler.Instance.SpawnFromPool("Scavenger", _scavengerSpawnPoint.position, _scavengerSpawnPoint.rotation);
+
+            if (s != null)
+            {
+                
+                ReiniciarCooldown();
+            }
+            else
+            {
+                Debug.LogError($"{name}: SpawnFromPool devolvió NULL. Pool 'Scavenger' vacío o no existe.");
+            }
         }
     }
 
