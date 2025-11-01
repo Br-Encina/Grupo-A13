@@ -27,6 +27,7 @@ public class EnemyScavenger : MonoBehaviour, IPooledObject
 
         // Buscar player (Optimización: Si tienes un GameManager, pide la referencia desde ahí)
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        Debug.Log(player);
 
         rb.linearVelocity = Vector3.zero; // Usar .velocity es más estándar que .linearVelocity
         rb.angularVelocity = Vector3.zero;
