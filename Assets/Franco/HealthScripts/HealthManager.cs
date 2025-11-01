@@ -27,6 +27,12 @@ public class HealthManager : MonoBehaviour, IHealth
         //enemyController.StarAttacking(player);
     }
 
+    public void Heal(int healAmount)
+    {
+        health += healAmount;
+        Debug.Log(transform.name + " healed to " + health);
+    }
+
     public void Death()
     {
         // Animate deadth
