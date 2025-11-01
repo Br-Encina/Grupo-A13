@@ -39,7 +39,7 @@ public class PlayerMovementV2 : MonoBehaviour
         {
             useGun = true;
             _animator.SetLayerWeight(1, 1);
-            _animator.SetTrigger("Shoot"); // lanza la animación de disparo
+            _animator.SetTrigger("Shoot"); // lanza la animaciï¿½n de disparo
         }
     }
 }
