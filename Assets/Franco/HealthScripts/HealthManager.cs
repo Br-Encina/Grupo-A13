@@ -29,7 +29,12 @@ public class HealthManager : MonoBehaviour, IHealth
 
     public void Heal(int healAmount)
     {
+        
         health += healAmount;
+        if (health > 100)
+        {
+            health = 100;
+        }
         Debug.Log(transform.name + " healed to " + health);
     }
 
