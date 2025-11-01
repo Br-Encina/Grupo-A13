@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class Healing : MonoBehaviour
 {
-   private void OnTriggerEnter(Collider other)
+
+    private void Update()
+    {
+        //rotar el objeto de curación lentamente
+        transform.Rotate(Vector3.up * 50 * Time.deltaTime);
+    }
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
