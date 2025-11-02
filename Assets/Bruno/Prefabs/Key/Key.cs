@@ -4,6 +4,11 @@ public class Key : MonoBehaviour
 {
     public string keyType;
 
+    private void Update()
+    {
+        transform.Rotate(Vector3.up * 50f * Time.deltaTime);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
