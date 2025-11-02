@@ -1,4 +1,6 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public  class WinLose : MonoBehaviour
 {
@@ -20,7 +22,8 @@ public  class WinLose : MonoBehaviour
         if (healthManager.Health <= 0)
         {
             Cursor.visible = true;
-            gameOverCanvas.SetActive(true);
+            //gameOverCanvas.SetActive(true);
+            SceneManager.LoadScene("looseScene");
         }
     }
 
