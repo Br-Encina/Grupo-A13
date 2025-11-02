@@ -2275,6 +2275,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7478313589927145808, guid: 345eebae71af4774a8664dec9ae3d6fe, type: 3}
   m_PrefabInstance: {fileID: 1410688525}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &235886895 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1174211702832516559, guid: 345eebae71af4774a8664dec9ae3d6fe, type: 3}
+  m_PrefabInstance: {fileID: 1410688525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &248382164
 Mesh:
   m_ObjectHideFlags: 0
@@ -10664,6 +10669,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1170684348076643678, guid: 345eebae71af4774a8664dec9ae3d6fe, type: 3}
+      propertyPath: DeathVfx
+      value: 
+      objectReference: {fileID: 8950624839484268180, guid: bb03df7f3fc2a56498058b8cda976100, type: 3}
+    - target: {fileID: 1170684348076643678, guid: 345eebae71af4774a8664dec9ae3d6fe, type: 3}
+      propertyPath: DeathVfxSpawnPoint
+      value: 
+      objectReference: {fileID: 235886895}
     - target: {fileID: 1174211702832516559, guid: 345eebae71af4774a8664dec9ae3d6fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.4
