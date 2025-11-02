@@ -391,6 +391,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  DeathVfx: {fileID: 8950624839484268180, guid: bb03df7f3fc2a56498058b8cda976100, type: 3}
+  DeathVfxSpawnPoint: {fileID: 6222939344070211523}
 --- !u!54 &4484502348028337234
 Rigidbody:
   m_ObjectHideFlags: 0

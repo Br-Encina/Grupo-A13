@@ -15,8 +15,8 @@ public class Enemy : MonoBehaviour
 
     protected bool isStunned = false;
     [SerializeField] private float stunDuration = 2f;
-    
 
+    [Header("Target")]
 
     [SerializeField] protected Transform target;
     protected float distancia;

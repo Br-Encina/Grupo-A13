@@ -5,6 +5,14 @@ public class HealthManager : MonoBehaviour, IHealth
 {
     [SerializeField]int health = 100;
 
+
+    [Header("VFX")]
+    [Tooltip("The VFX prefab spawned when the enemy dies")]
+    public GameObject DeathVfx;
+
+    [Tooltip("The point at which the death VFX is spawned")]
+    public Transform DeathVfxSpawnPoint;
+
     //Necesario para hacer una llama al controlador del enemigo
     //EnemyController enemyController;
     public int Health { get {return health; } set { health = value;}}
@@ -51,6 +59,9 @@ public class HealthManager : MonoBehaviour, IHealth
         }
         else
         {
+            var vfx = Instantiate(DeathVfx, DeathVfxSpawnPoint.position, Quaternion.identity);
+            Destroy(vfx, 5f);
+
             Destroy(gameObject, 1);
             Debug.Log(transform.name + " is dead");
           
