@@ -76,7 +76,7 @@ MonoBehaviour:
   speed: 5
   explosionRadius: 2
   explosionDamage: 10
-  lifetime: 5
+  lifetime: 3
 --- !u!1001 &4974137424957579235
 PrefabInstance:
   m_ObjectHideFlags: 0

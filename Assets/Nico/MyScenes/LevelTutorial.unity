@@ -8271,6 +8271,10 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3569248979256480546, guid: ef525867456665e4d9996541af2e427a, type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569248979256480546, guid: ef525867456665e4d9996541af2e427a, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1717398351}
@@ -13582,6 +13586,10 @@ PrefabInstance:
     - target: {fileID: 613063955669878914, guid: ef525867456665e4d9996541af2e427a, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569248979256480546, guid: ef525867456665e4d9996541af2e427a, type: 3}
+      propertyPath: speed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3569248979256480546, guid: ef525867456665e4d9996541af2e427a, type: 3}
       propertyPath: target
