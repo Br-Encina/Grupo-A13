@@ -1,15 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+
 public class Door : MonoBehaviour
 {
     [Tooltip("Lista de llaves necesarias para abrir la puerta.")]
     public List<string> requiredKeys = new List<string>();
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (!other.CompareTag("Player"))
-            return;
+       
 
         // Verificamos si el jugador tiene todas las llaves necesarias
         bool hasAllKeys = true;
