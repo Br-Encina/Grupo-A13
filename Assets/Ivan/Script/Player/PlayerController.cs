@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
   private void Start()
   {
     playerMovement = GetComponent<PlayerMovement>();
-    playerLookAtMouse = GetComponent<PlayerLookAtMouse>();
+    //playerLookAtMouse = GetComponent<PlayerLookAtMouse>();
     playerFireGun = GetComponentInChildren<PlayerFireGun>();
   }
 
@@ -22,12 +22,12 @@ public class PlayerController : MonoBehaviour
       //playerFireGun.FireBullet();
     }
   }
-
+    /*
   private void LateUpdate()
   {
     playerLookAtMouse.PlayerAtMouse();
   }
-
+*/
   private void FixedUpdate()
   {
     if (playerMovement == null)
