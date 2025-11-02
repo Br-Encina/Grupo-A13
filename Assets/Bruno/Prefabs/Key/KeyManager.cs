@@ -10,7 +10,7 @@ public class KeyManager : MonoBehaviour
         {
             if (_instance == null)
             {
-                _instance = FindObjectOfType<KeyManager>();
+                _instance = Object.FindFirstObjectByType<KeyManager>();
                 if (_instance == null)
                 {
                     Debug.LogError("No hay un KeyManager en la escena.");
