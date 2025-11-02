@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Mouse0))
     {
       playerFireGun.IsGunFireAttackTrue();
-      //playerFireGun.FireBullet();
     }
   }
     /*
